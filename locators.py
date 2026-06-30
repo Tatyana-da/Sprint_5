@@ -22,16 +22,16 @@ class AuthPageLocators:
 class ProfilePageLocators:
     USER_NAME = (By.XPATH, "//h3[contains(@class, 'profileText') and contains(text(), 'User')]")
     LOGOUT_BUTTON = (By.XPATH, "//button[contains(text(), 'Выйти')]")
-    MY_ADS_BLOCK = (By.XPATH, "//div[contains(@class, 'profile__ads')]")
-    AD_TITLE = (By.XPATH, "//h2[contains(@class, 'card__title')] | //h3[contains(@class, 'title')]")
+    MY_ADS_BLOCK = (By.XPATH, "//h1[text()='Мои объявления']")
+    AD_TITLE = (By.XPATH, "//div[contains(@class, 'card')]//div[contains(@class, 'about')]//h2")
 
 
 class AdPageLocators:
     TITLE_INPUT = (By.XPATH, "//input[@name='name' and @placeholder='Название']")
     DESCRIPTION_INPUT = (By.XPATH, "//textarea[@name='description' and @placeholder='Описание товара']")
     PRICE_INPUT = (By.XPATH, "//input[@name='price' and @placeholder='Стоимость']")
-    CATEGORY_INPUT = (By.XPATH, "//input[@name='category']")
-    CITY_INPUT = (By.XPATH, "//input[@name='city']")
+    CATEGORY_INPUT = (By.XPATH, "//*[@id='root']/div/div[2]/div/form/div[2]/div[2]/div[1]/button")
+    CITY_INPUT = (By.XPATH, "//*[@id='root']/div/div[2]/div/form/div[3]/div[1]/button")
     RADIO_NEW = (By.XPATH, "//input[@type='radio' and @name='condition' and @value='Новый']/..")
     PUBLISH_BUTTON = (By.XPATH, "//button[contains(text(), 'Опубликовать')]")
     

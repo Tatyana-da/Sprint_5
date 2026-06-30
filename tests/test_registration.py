@@ -4,7 +4,6 @@ from locators import MainPageLocators, AuthPageLocators, ProfilePageLocators
 
 
 class TestRegistration:
-   
     #Регистрация нового пользователя с корректными данными
     def test_registration_success(self, driver, wait, random_user):
         wait.until(EC.presence_of_element_located(MainPageLocators.LOGIN_REGISTER_BUTTON))

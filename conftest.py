@@ -3,9 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="function") #Фикстура для создания и закрытия драйвера
 def driver():
-    """Фикстура для создания и закрытия драйвера."""
     driver = webdriver.Chrome()
     driver.get("https://qa-desk.education-services.ru/")
     driver.maximize_window()
@@ -13,15 +12,13 @@ def driver():
     driver.quit()
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="function") #Фикстура для явных ожиданий
 def wait(driver):
-    """Фикстура для явных ожиданий."""
     return WebDriverWait(driver, 20)
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="function") #Генерация уникального пользователя для каждого теста
 def random_user():
-    """Генерация уникального пользователя для каждого теста."""
     import time
     timestamp = int(time.time())
     return {
@@ -31,9 +28,8 @@ def random_user():
     }
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="function") #Генерация уникальных данных для объявления
 def ad_data():
-    """Генерация уникальных данных для объявления."""
     import time
     timestamp = int(time.time())
     return {
